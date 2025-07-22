@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Wedding</title>
+  <!-- GLightbox CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fffafc;
+      color: #333;
+    }
+    header {
+      background-color: #f9d5e5;
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      font-size: 2rem;
+      color: #b03a68;
+      margin-bottom: 1rem;
+    }
+    .schedule-item {
+      margin-bottom: 1.5rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input, textarea, button {
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #b03a68;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      background-color: #f0f0f0;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+
+    /* Gallery Styles */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+   #countdown {
+     font-size: 1.5rem;
+     margin-top: 1rem;
+     color: #b03a68;
+     font-weight: bold;
+   }
+  #countdown span {
+    min-width: 30px;
+    display: inline-block;
+    text-align: center;
+   }
+  #countdown span {
+  display: inline-block;
+  min-width: 40px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#countdown span.updated {
+  transform: scale(1.3);
+  color: #e91e63;
+}
+
+.map-container {
+  border: 4px solid #f9d5e5;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-top: 1rem;
+}
+#theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+#theme-toggle button {
+  background: none;
+  border: 2px solid #b03a68;
+  color: #b03a68;
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#theme-toggle button:hover {
+  background-color: #b03a68;
+  color: white;
+}
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+}
+
+body.dark-mode header {
+  background-color: #2b2b2b;
+  color: #f5f5f5;
+}
+
+body.dark-mode section {
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+}
+
+body.dark-mode footer {
+  background-color: #2b2b2b;
+  color: #ddd;
+}
+
+body.dark-mode a {
+  color: #ff99cc;
+}
+
+body.dark-mode button {
+  border-color: #ff99cc;
+  color: #ff99cc;
+}
+body.dark-mode button:hover {
+  background-color: #ff99cc;
+  color: #1a1a1a;
+}
+  </style>
+</head>
+<!-- GLightbox JS -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    const lightbox = GLightbox({ selector: '.glightbox' });
+  </script>
+<body>
+
+  <header>
+    <h1>Jenn & Sam</h1>
+    <p>We're getting married! June 13th, 2026</p>
+    <p>Riverview Orchard, Keswick, NB</p>
+    <div id="countdown">
+      <span id="days">00</span>d :
+      <span id="hours">00</span>h :
+      <span id="minutes">00</span>m :
+      <span id="seconds">00</span>s
+    </div>
+<div id="theme-toggle">
+  <button onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+</div>
+  </header>
+
+  <section id="ourstory">
+    <h2>Our Story</h2>
+      <p>
+        Jenn moved to Canada in December of 2021 from her home country of Argentina, and lucky for Sam, she chose to move to Fredericton, NB. 
+Then in September of 2024, they would finally meet for the first time. After having matched on Bumble, Jenn made the first move with a simple 
+"Hi Sam! 😊", the conversation flowed from there. Shortly after, they continued talking and eventually scheduled their first date at an Indian restaurant
+ owned by Sam's friend, "Swaad of India". Sam ordered the Butter Chicken and Jenn ordered the Chickpea Tikka Masala, the food was amazing and the conversation was
+ very easy and natural, it felt as though they were long time friends, right from the start. They already scheduled a second date during dinner.
+ After dinner they went back to Jenn's place and continued talking for hours, laughing and telling stories, continuing to learn more about eachother. Over the coming weeks, they
+ continued to go on many fun dates, and started to hang out almost every day.
+      </p>
+  </section>
+
+  <section id="schedule">
+    <h2>Wedding Schedule</h2>
+    <div class="schedule-item">
+      <strong>5:00 PM – Ceremony</strong>
+      <p>The part we're all here for</p>
+    </div>
+    <div class="schedule-item">
+      <strong>5:45 PM – Cocktail Hour</strong>
+      <p>Mingle with other guests and enjoy snacks and drinks!</p>
+    </div>
+    <div class="schedule-item">
+      <strong>6:45 PM – Dinner + Reception</strong>
+      <p>Nom nom nom + speeches</p>
+    </div>
+    <div class="schedule-item">
+      <strong>7:45 PM – Cake Cutting + Dessert</strong>
+      <p>Will we do the cake to the face thing? Find out!</p>
+    </div>
+    <div class="schedule-item">
+      <strong>8:00 PM – First Dance</strong>
+      <p>We got killer moves trust me</p>
+    </div>
+    <div class="schedule-item">
+      <strong>8:20 PM – Party</strong>
+      <p>Time to get shitfaced</p>
+    </div>
+  </section>
+
+  <section id="gallery">
+  <h2>Photo Gallery</h2>
+    <div class="gallery">
+      <a href="images/pic1.jpg?auto=format&fit=crop&w=1600&q=80" class="glightbox">
+        <img src="images/pic1.jpg?auto=format&fit=crop&w=800&q=80" alt="Wedding Couple" />
+      </a>
+      <a href="images/pic2.jpg?auto=format&fit=crop&w=1600&q=80" class="glightbox">
+        <img src="images/pic2.jpg?auto=format&fit=crop&w=800&q=80" alt="Wedding Rings" />
+      </a>
+      <a href="images/pic3.jpg?auto=format&fit=crop&w=1600&q=80" class="glightbox">
+        <img src="images/pic3.jpg?auto=format&fit=crop&w=800&q=80" alt="Bridal Flowers" />
+      </a>
+      <a href="images/pic4.jpg?auto=format&fit=crop&w=1600&q=80" class="glightbox">
+        <img src="images/pic4.jpg?auto=format&fit=crop&w=800&q=80" alt="Reception Venue" />
+      </a>
+      <a href="images/pic5.jpg?auto=format&fit=crop&w=1600&q=80" class="glightbox">
+        <img src="images/pic5.jpg?auto=format&fit=crop&w=800&q=80" alt="Wedding Cake" />
+      </a>
+      <a href="images/pic6.jpg?auto=format&fit=crop&w=1600&q=80" class="glightbox">
+        <img src="images/pic6.jpg?auto=format&fit=crop&w=800&q=80" alt="First Dance" />
+      </a>
+    </div>
+  </section>
+
+  <script>
+  const weddingDate = new Date("June 13, 2026 17:00:00").getTime();
+
+    const timer = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    if (distance < 0) {
+      clearInterval(timer);
+      document.getElementById("countdown").innerHTML = "It's Wedding Time! 💍";
+
+      // Launch confetti!
+        confetti({
+        particleCount: 200,
+        spread: 120,
+        origin: { y: 0.6 }
+      });
+      return;
+    }
+
+   function updateTime(id, newValue) {
+  const el = document.getElementById(id);
+  if (el.textContent !== newValue) {
+    el.textContent = newValue;
+    el.classList.add("updated");
+    setTimeout(() => el.classList.remove("updated"), 300);
+  }
+}
+
+
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    updateTime("days", days.toString().padStart(2, '0'));
+    updateTime("hours", hours.toString().padStart(2, '0'));
+    updateTime("minutes", minutes.toString().padStart(2, '0'));
+    updateTime("seconds", seconds.toString().padStart(2, '0'));
+  }, 1000);
+</script>
+
+  <section id="menu">
+    <h2>Meal Options</h2>
+      <h3>Grilled Filet with Red Onion Marmalade</h3>
+        <p>Served with Mashed Potatoes, Carrots and Green Beans</p>
+      <h3>Grilled Salmon with Citrus Basil Relish</h3>
+        <p>Served with Red Potatoes and Asparagus</p>
+      <h3>Grilled Vegetable Paella</h3>
+        <p>Assorted Grilled Vegetables, Yellow Rice, Grilled Baguette, Fire Roasted Tomato Broth</p>
+  </section>
+
+  <section id="rsvp">
+    <h2>RSVP</h2>
+    <form action="https://formspree.io/f/yourformid" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Please indicate your meal choice" rows="4"></textarea>
+      <button type="submit">Submit RSVP</button>
+    </form>
+  </section>
+
+  <section id="gifts">
+    <h2>Gifts</h2>
+      <p>In lieu of gifts, we want COLD, HARD, CASH!!!!! GIVE US YOUR LIFE SAVINGS MOTHERFUCKER!!!! HAHAHAHAHAHAHAHA!!!! GIVE US ALL YOUR FUCKING MONEY!!!! etransfer here: <a href="mailto:jennparamo@gmail.com">jennparamo@gmail.com</a> :)</p>
+  </section>
+
+<section id="ourstory">
+    <h2>Dress Code</h2>
+      <p>This is where we will put the recommendations for dress code.</p>
+  </section>
+
+  <section id="map">
+    <h2>Venue Location</h2>
+    <p>Riverview Orchard, Keswick, NB</p>
+    <div class="map-container">
+      <iframe
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2772.2637687565275!2d-66.87838130750309!3d45.985962523933665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ca43e406724ee77%3A0x5bab7d0507d34c8c!2sRiver%20View%20Orchard!5e0!3m2!1sen!2sca!4v1752698522798!5m2!1sen!2sca"
+        width="100%"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">        
+      </iframe>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>If you have any questions, feel free to email us at: <a href="mailto:samandjennwedding@gmail.com">samandjennwedding@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <p>We can't wait to celebrate with you! 💕</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+    // Save preference in localStorage
+    if (document.body.classList.contains("dark-mode")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
+  }
+
+  // Apply saved theme on load
+  window.onload = function () {
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark-mode");
+    }
+  };
+</script>
+
+</body>
+</html>

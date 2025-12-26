@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 	<style>
-    body {
+    body::before {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       min-height: 100vh;
@@ -18,6 +18,11 @@
   	  background-position: center;
   	  background-repeat: no-repeat;
       color: #333;
+	  content: "";
+  	  position: fixed;
+  	  inset: 0;
+  	  background: rgba(0, 0, 0, 0.35);
+  	  z-index: -1;
     }
     header {
       background-color: white;
@@ -416,6 +421,7 @@ h2 {
 
 </body>
 </html>
+
 
 
 
